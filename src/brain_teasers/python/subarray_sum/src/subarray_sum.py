@@ -1,4 +1,4 @@
-def subarray_sum(arr, start_index, end_index):
+def subarray_sum(arr: list, start_index: int, end_index: int) -> int:
     """
     Calculate and return  the sum of elements in a subarray from start_index to end_index (inclusive).
     Args:
