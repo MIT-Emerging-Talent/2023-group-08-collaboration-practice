@@ -1,31 +1,51 @@
-def fib_basic(n):
+def fib_recursion(n: int) -> int:
+    """Calculate fibonacci of a number
+
+    Args:
+        n (int): a non-negative integer that fibonacci is calculated for.
+
+    Returns:
+        int: fibonacci of n.
+    """
     if n <= 0:
         return 0
     elif n == 1:
         return 1
     else:
-        return fib_basic(n - 2) + fib_basic(n - 1)
+        return fib_recursion(n - 2) + fib_recursion(n - 1)
 
 
-def fib_memo(n, memo=dict()):
-    if n < 1:
-        return 0
-    if n <= 2:
-        return 1
-    return memo.get(n, fib_memo(n - 1, memo) + fib_memo(n - 2, memo))
+def fib_basic(n: int) -> int:
+    """Calculate fibonacci of a number
+
+    Args:
+        n (int): a non-negative integer that fibonacci is calculated for.
+
+    Returns:
+        int: fibonacci of n.
+    """
+    a = 0
+    b = 1
+    count = 0
+    while (count < n):
+        temp = b
+        b = temp + a
+        a = temp
+        count +=1
+    return a
 
 
-def fib_tab(n):
-    if n < 1:
-        return 0
+def fib_list(n: int) -> list:
+    """returns a list of fibonacci number up to n
 
-    if n == 1:
-        return 1
+    Args:
+        n (int): a non negative integer
 
-    table = [0] * (n + 1)
-    table[1] = 1
-
-    for i in range(2, n + 1):
-        table[i] = table[i - 1] + table[i - 2]
-
-    return table[n]
+    Returns:
+        list: list of fibonacci numbers
+    """
+    fib_series = [0,1]
+    while len(fib_series)<n:
+        next_num = fib_series[-1] + fib_series[-2]
+        fib_series.append(next_num)
+    return fib_series
