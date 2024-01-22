@@ -2,11 +2,8 @@ import unittest
 
 import os
 import sys
-
-file_dir = os.path.dirname(os.path.dirname(__file__))
-sys.path.append(file_dir + "/src")
-
-from insertion_sort import insertionsort_v1
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from src.insertion_sort import selectionsort_v1
 
 
 class TestSelectionSortV1(unittest.TestCase):

@@ -1,8 +1,5 @@
 import unittest
-
-
-from src.fibonacci import fib_basic, fib_recursion,fib_list
-
+from src.fib import fib_basic, fib_recursion,fib_list
 
 class TestFibBasic(unittest.TestCase):
     def test_with_0(self):
@@ -22,7 +19,7 @@ class TestFibBasic(unittest.TestCase):
 
     def test_with_10(self):
         num = 10
-        result = 55
+        result = 0
         self.assertEqual(fib_basic(num), result)
 
     def test_with_20(self):

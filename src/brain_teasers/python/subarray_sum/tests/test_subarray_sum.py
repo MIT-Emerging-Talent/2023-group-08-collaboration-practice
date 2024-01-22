@@ -1,6 +1,13 @@
+# tests/test_subarray_sum.py
 import unittest
+import sys
+import os
 
-from src.subarray_sum import subarray_sum
+# Add the project root directory to sys.path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Now you can import the module
+from src.subarray_sum import subarray_sum 
 
 
 class TestSubarraySum(unittest.TestCase):
@@ -19,7 +26,7 @@ class TestSubarraySum(unittest.TestCase):
         end_index = 5
         expected = 12
         actual = subarray_sum(input_array, start_index, end_index)
-
+        
         self.assertEqual(actual, expected)
 
     def test_3(self):
